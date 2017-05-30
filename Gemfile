@@ -53,3 +53,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg'
+end
+
