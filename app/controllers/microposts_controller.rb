@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, only: [:create, :destroy]
   before_action :correct_user, only: [:destroy]
   
   def create
@@ -19,7 +19,7 @@ class MicropostsController < ApplicationController
     flash[:success] = 'メッセージを削除しました。'
     redirect_back(fallback_location: root_path)
   end
-  
+
   private
   
   def micropost_params
